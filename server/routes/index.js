@@ -1,14 +1,19 @@
 var express = require('express')
-const { adminCollection } = require('../db')
+const { productCollection } = require('../db')
 var router = express.Router()
 
-/* GET home page. */
 router.get('/', async function (req, res) {
-	let admins = []
-	await adminCollection.find({}).forEach((element) => {
-		admins.push(element)
+	let products = []
+	await productCollection.find({}).forEach((element) => {
+		products.push(element)
 	})
-	res.status(200).send({ admins })
+	res.status(200).send({ products })
+})
+
+router.post('/', async (req, res) => {
+	let results = []
+	await productCollection.find(JSON.parse(req.body.query)).forEach((element) => results.push(element))
+	res.status(200).send({ results })
 })
 
 module.exports = router

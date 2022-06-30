@@ -1,17 +1,17 @@
 export const fields = [
 	{
-		name: 'username',
-		label: 'Username',
+		name: 'id',
+		label: 'id',
 		inputType: 'text',
 	},
 	{
-		name: 'password',
-		label: 'Password',
+		name: 'name',
+		label: 'name',
 		inputType: 'text',
 	},
 	{
-		name: 'address',
-		label: 'Address',
+		name: 'price',
+		label: 'price',
 		inputType: 'text',
 	},
 	{
